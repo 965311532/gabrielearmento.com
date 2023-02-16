@@ -1,10 +1,11 @@
 import Card from "./components/Card";
+import GithubWidget from "./components/GithubWidget";
 import MapsWidget from "./components/MapsWidget";
 import SpotifyWidget from "./components/SpotifyWidget";
 
 function App() {
   return (
-    <div className="mx-auto grid max-w-3xl grid-cols-6 gap-3 p-4 md:p-10">
+    <div className="mx-auto grid max-w-3xl grid-cols-6 gap-5 p-4 md:p-10">
       <Card sizeClass="h-20" spanClass="col-span-6" bgClass="bg-black">
         <h1 className="text-2xl text-white">
           Hi there! Welcome to my portfolio
@@ -53,9 +54,7 @@ function App() {
       >
         <h1 className="text-2xl text-white">stack</h1>
       </Card>
-      <Card sizeClass="h-48" spanClass="col-span-6" bgClass="bg-black">
-        <h1 className="text-2xl text-white">contributions</h1>
-      </Card>
+      <GithubWidget />
       <Card sizeClass="h-72" spanClass="col-span-6" bgClass="bg-black">
         <h1 className="text-2xl text-white">contact form</h1>
       </Card>
