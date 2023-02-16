@@ -1,24 +1,10 @@
-import { useEffect, useState } from "react";
-import Card from "./Card";
+import Card from "./components/Card";
+import MapsWidget from "./components/MapsWidget";
+import SpotifyWidget from "./components/SpotifyWidget";
 
 function App() {
-  const [latestLocationImg, setLatestLocationImage] = useState();
-
-  const fetchImage = async () => {
-    const locationData = await fetch("/api/latest-location");
-    const location = await locationData.json();
-    const image = await fetch(location.map);
-    const imageBlob = await image.blob();
-    const imageObjectURL = URL.createObjectURL(imageBlob);
-    setLatestLocationImage(imageObjectURL);
-  };
-
-  useEffect(() => {
-    fetchImage();
-  }, []);
-
   return (
-    <div className="mx-auto grid max-w-3xl grid-cols-6 gap-3 p-10">
+    <div className="mx-auto grid max-w-3xl grid-cols-6 gap-3 p-4 md:p-10">
       <Card sizeClass="h-20" spanClass="col-span-6" bgClass="bg-black">
         <h1 className="text-2xl text-white">
           Hi there! Welcome to my portfolio
@@ -45,31 +31,8 @@ function App() {
           </div>
         </Card>
       </div>
-      <Card
-        sizeClass="h-72"
-        spanClass="col-span-6 md:col-span-3"
-        bgClass="bg-black relative p-0"
-      >
-        <div className="absolute">
-          <span className="block h-8 w-8 animate-ping-slow rounded-full bg-blue-400"></span>
-        </div>
-        <div className="absolute">
-          <span className="block h-4 w-4 rounded-full bg-blue-600 ring-4 ring-white shadow-xl"></span>
-        </div>
-
-        <img
-          src={latestLocationImg}
-          alt="latest location"
-          className="object-cover w-full h-full rounded-[30px]"
-        />
-      </Card>
-      <Card
-        sizeClass="h-72"
-        spanClass="col-span-6 md:col-span-3"
-        bgClass="bg-black"
-      >
-        <h1 className="text-2xl text-white">spoti</h1>
-      </Card>
+      <MapsWidget />
+      <SpotifyWidget />
       <Card
         sizeClass="h-72"
         spanClass="col-span-6 md:col-span-4"

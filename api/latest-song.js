@@ -62,7 +62,7 @@ function reduceSongData(data) {
   };
 }
 
-export default async function getLatestSong(request, response) {
+export default async function handler(request, response) {
   // We want to get either the currently playing song or the most
   // recently listened to song
   const CURRENTLY_PLAYING_URL =
