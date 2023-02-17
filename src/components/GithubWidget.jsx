@@ -34,7 +34,7 @@ export default function GitHubWidget() {
         <a
           href="https://github.com/965311532"
           target="_blank"
-          className="text-lg uppercase font-bold text-white/90 inline-flex flex-row flex-shrink items-center justify-start text-left mb-4"
+          className="text-lg uppercase font-bold font-display text-white/90 inline-flex flex-row flex-shrink items-center justify-start text-left mb-4"
         >
           <SiGithub className="mr-2" />
           <span className="hover:underline">
