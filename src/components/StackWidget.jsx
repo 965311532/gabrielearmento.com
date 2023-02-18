@@ -78,14 +78,10 @@ export default function StackWidget() {
   return (
     <Card spanClass="col-span-6 md:col-span-3" bgClass="bg-black p-10">
       <div className="w-full">
-        <a
-          href="https://github.com/965311532"
-          target="_blank"
-          className="text-lg uppercase font-bold font-display text-white/90 inline-flex flex-row flex-shrink items-center justify-start text-left mb-4"
-        >
+        <div className="text-lg uppercase font-bold font-display text-white/90 inline-flex flex-row flex-shrink items-center justify-start text-left mb-4">
           <FaTools className="mr-2" />
-          <span className="hover:underline">My tools</span>
-        </a>
+          <span>My Tools</span>
+        </div>
       </div>
       <div className="text-white flex flex-wrap justify-center items-center h-full">
         {/* Show the icons with the right color and set a tooltip on each element */}
