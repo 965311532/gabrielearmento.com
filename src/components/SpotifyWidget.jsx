@@ -11,7 +11,6 @@ export default function SpotifyWidget() {
 
   return (
     <Card
-      sizeClass="h-72"
       spanClass="col-span-6 md:col-span-3"
       bgClass="bg-black relative" // relative!!!
     >

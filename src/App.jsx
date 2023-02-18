@@ -1,7 +1,9 @@
+import { SiSuperuser } from "react-icons/si";
 import Card from "./components/Card";
 import GithubWidget from "./components/GithubWidget";
 import MapsWidget from "./components/MapsWidget";
 import SpotifyWidget from "./components/SpotifyWidget";
+import StackWidget from "./components/StackWidget";
 
 function App() {
   return (
@@ -12,11 +14,11 @@ function App() {
         </h1>
       </Card>
       <Card
-        sizeClass="h-full min-h-48"
+        sizeClass="h-full"
         spanClass="md:col-span-5 col-span-6"
-        bgClass="bg-black"
+        bgClass="bg-black p-8"
       >
-        <h1 className="text-2xl text-white">
+        <h1 className="text-2xl text-white font-display">
           22 years old full stack software developer and aspiring entrepreneur
         </h1>
       </Card>
@@ -32,28 +34,25 @@ function App() {
           </div>
         </Card>
       </div>
-      <MapsWidget />
+      <StackWidget />
       <SpotifyWidget />
-      <Card
-        sizeClass="h-72"
-        spanClass="col-span-6 md:col-span-4"
-        bgClass="bg-black"
-      >
-        <h1 className="text-2xl text-white">About me</h1>
+      <Card spanClass="col-span-6 md:col-span-4" bgClass="bg-black p-8">
+        <div className="w-full">
+          <div className="text-lg uppercase font-bold font-display text-white/90 inline-flex flex-row flex-shrink items-center justify-start text-left mb-4">
+            <SiSuperuser className="mr-2" />
+            <span>About me</span>
+          </div>
+        </div>
         <span className="text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
-          explicabo vitae quo tenetur porro alias molestias distinctio totam?
-          Totam, inventore sunt quasi impedit similique sequi natus quo
-          quibusdam suscipit fuga!
+          Ciao, I'm Gabriele, a self-taught software developer based in Italy. I
+          have a passion for automation, finance, and entrepreneurship. I highly
+          value friendship, logic, and curiosity, and I'm always seeking to
+          learn new things. Whether it's exploring new technologies or working
+          on long-term projects, I'm always up for a challenge. Let's connect
+          and see how we can work together!
         </span>
       </Card>
-      <Card
-        sizeClass="h-72"
-        spanClass="col-span-6 md:col-span-2"
-        bgClass="bg-black"
-      >
-        <h1 className="text-2xl text-white">stack</h1>
-      </Card>
+      <MapsWidget />
       <GithubWidget />
       <Card sizeClass="h-72" spanClass="col-span-6" bgClass="bg-black">
         <h1 className="text-2xl text-white">contact form</h1>

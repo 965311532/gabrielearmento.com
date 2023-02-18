@@ -20,7 +20,7 @@ export default function MapsWidget() {
   return (
     <Card
       sizeClass="h-72"
-      spanClass="col-span-6 md:col-span-3"
+      spanClass="col-span-6 md:col-span-2"
       bgClass="bg-black relative p-0"
     >
       <div className="absolute">
