@@ -21,8 +21,8 @@ function PulsingDot({ className }) {
 
 export default function MapsWidget() {
   const [latestLocation, setLatestLocation] = useState({
-    city: "Loading...",
-    region: "Loading...",
+    city: "Loading...", // This will show while loading
+    region: "",
     map: "/maps-placeholder.png",
   });
   const [isMapBlurred, setIsMapBlurred] = useState(true);
@@ -56,8 +56,12 @@ export default function MapsWidget() {
           <span className="leading-6 text-white/90">📍 I'm currently in</span>
           <span className="leading-6 text-2xl flex flex-row items-center text-white">
             <span className="font-bold">{latestLocation.city}</span>
-            <span className="">, {latestLocation.region}</span>
-            <Flag country={latestLocation.region} className="ml-1" />
+            {latestLocation.region && (
+              <>
+                <span className="">, {latestLocation.region}</span>
+                <Flag country={latestLocation.region} className="ml-1" />
+              </>
+            )}
           </span>
         </div>
       </div>
