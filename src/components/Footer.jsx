@@ -14,18 +14,20 @@ function FooterLink({ href, children }) {
 
 export default function Footer() {
   return (
-    <span className="text-zinc-400 text-sm flex flex-row gap-4 items-center justify-center">
+    <span className="text-zinc-400 md:text-sm text-2xl flex flex-row gap-4 items-center justify-center">
       <FooterLink href="https://github.com/965311532">
-        <SiGithub className="mr-1" /> 965311532
+        <SiGithub className="md:mr-1" />
+        <span className="hidden md:inline">965311532</span>
       </FooterLink>
       <span>—</span>
       <FooterLink href="https://www.linkedin.com/in/gabrielearmento/">
-        <SiLinkedin className="mr-1" />
-        Gabriele Armento
+        <SiLinkedin className="md:mr-1" />
+        <span className="hidden md:inline">Gabriele Armento</span>
       </FooterLink>
       <span>—</span>
       <FooterLink href="mailto:gabriele.armento@gmail.com">
-        <RiMailUnreadFill className="mr-1" /> gabriele.armento@gmail.com
+        <RiMailUnreadFill className="md:mr-1" />
+        <span className="hidden md:inline">gabriele.armento@gmail.com</span>
       </FooterLink>
     </span>
   );

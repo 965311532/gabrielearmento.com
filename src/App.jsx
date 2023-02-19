@@ -1,6 +1,7 @@
 import { SiSuperuser } from "react-icons/si";
 import { useMediaQuery } from "react-responsive";
 import Card from "./components/Card";
+import Footer from "./components/Footer";
 import GithubWidget from "./components/GithubWidget";
 import MapsWidget from "./components/MapsWidget";
 import SpotifyWidget from "./components/SpotifyWidget";
@@ -53,7 +54,9 @@ function App() {
       <StackWidget />
       <SpotifyWidget />
       <GithubWidget />
-      <div className="col-span-6 p-6">{/* <Footer /> */}</div>
+      <div className="col-span-6 p-6">
+        <Footer />
+      </div>
     </div>
   );
 }
