@@ -25,10 +25,10 @@ export default async function handler(req, res) {
   // set the parameters for the map
   const params = new URLSearchParams({
     center: `${location.city},${location.region}`,
-    zoom: 13,
+    zoom: 14,
     scale: 2,
-    format: "jpg",
-    size: "320x320",
+    format: "png",
+    size: "640x640",
     key: apiKey,
   });
   // add the `map` parameter to location
