@@ -15,19 +15,17 @@ function App() {
         <div className="flex flex-col md:flex-row items-center justify-start w-full md:py-6 md:px-10 p-4">
           <div className="flex flex-row items-baseline justify-start w-full md:w-auto">
             <img
-              src="/public/pfp.png"
+              src="/pfp.png"
               alt="Profile Picture"
               className="md:w-20 md:h-20 mr-4 w-[40px] h-[40px]"
             />
             {isTabletOrMobile && (
-              <h1 className="text-[35px] text-white/90 font-bold">
-                Hi there!{" "}
-              </h1>
+              <h1 className="text-[40px] text-white/90 font-bold">Hi there!</h1>
             )}
           </div>
           <div className="flex flex-col items-start justify-start">
             {!isTabletOrMobile && (
-              <h1 className="text-4xl text-white/90 font-bold">Hi there! </h1>
+              <h1 className="text-4xl text-white/90 font-bold">Hi there!</h1>
             )}
             <span className="text-white/70">
               I'm Gabriele, a 22 years old software developer based in Italy.
@@ -35,8 +33,6 @@ function App() {
           </div>
         </div>
       </Card>
-      <StackWidget />
-      <SpotifyWidget />
       <Card spanClass="col-span-6 md:col-span-4" bgClass="bg-black p-8">
         <div className="w-full">
           <div className="text-lg uppercase font-bold font-display text-white/90 inline-flex flex-row flex-shrink items-center justify-start text-left mb-4">
@@ -54,6 +50,8 @@ function App() {
         </span>
       </Card>
       <MapsWidget />
+      <StackWidget />
+      <SpotifyWidget />
       <GithubWidget />
       <div className="col-span-6 p-6">{/* <Footer /> */}</div>
     </div>

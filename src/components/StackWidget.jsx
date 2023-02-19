@@ -83,7 +83,7 @@ export default function StackWidget() {
           <span>My Tools</span>
         </div>
       </div>
-      <div className="text-white flex flex-wrap justify-center items-center h-full">
+      <div className="text-white grid grid-cols-4 gap-1">
         {/* Show the icons with the right color and set a tooltip on each element */}
         {tools.map((tool, index) => {
           const Icon = tool.icon;

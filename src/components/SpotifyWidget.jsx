@@ -13,6 +13,7 @@ export default function SpotifyWidget() {
     <Card
       spanClass="col-span-6 md:col-span-3"
       bgClass="bg-black relative" // relative!!!
+      sizeClass="min-h-[300px]"
     >
       {isLoading && <div>Loading...</div>}
       {isError && <div>Error</div>}
