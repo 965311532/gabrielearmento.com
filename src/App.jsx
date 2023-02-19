@@ -1,4 +1,5 @@
 import { SiSuperuser } from "react-icons/si";
+import { useMediaQuery } from "react-responsive";
 import Card from "./components/Card";
 import GithubWidget from "./components/GithubWidget";
 import MapsWidget from "./components/MapsWidget";
@@ -6,34 +7,34 @@ import SpotifyWidget from "./components/SpotifyWidget";
 import StackWidget from "./components/StackWidget";
 
 function App() {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
   return (
     <div className="mx-auto grid max-w-3xl grid-cols-6 gap-5 p-4 md:p-10">
-      <Card sizeClass="h-20" spanClass="col-span-6" bgClass="bg-black">
-        <h1 className="text-2xl text-white">
-          Hi there! Welcome to my portfolio
-        </h1>
-      </Card>
-      <Card
-        sizeClass="h-full"
-        spanClass="md:col-span-5 col-span-6"
-        bgClass="bg-black p-8"
-      >
-        <h1 className="text-2xl text-white font-display">
-          22 years old full stack software developer and aspiring entrepreneur
-        </h1>
-      </Card>
-      <div className="col-span-6 md:col-span-1 w-full grid grid-cols-2 md:grid-cols-1 gap-3">
-        <Card sizeClass="w-full" bgClass="bg-black">
-          <div className="p-1">
-            <img src="/public/linkedin-logo.svg" alt="linkedin logo" />
+      <Card sizeClass="h-full" spanClass="col-span-6" bgClass="bg-black">
+        <div className="flex flex-col md:flex-row items-center justify-start w-full md:py-6 md:px-10 p-4">
+          <div className="flex flex-row items-baseline justify-start w-full md:w-auto">
+            <img
+              src="/public/pfp.png"
+              alt="Profile Picture"
+              className="md:w-20 md:h-20 mr-4 w-[40px] h-[40px]"
+            />
+            {isTabletOrMobile && (
+              <h1 className="text-[35px] text-white/90 font-bold">
+                Hi there!{" "}
+              </h1>
+            )}
           </div>
-        </Card>
-        <Card sizeClass="w-full" bgClass="bg-black">
-          <div className="p-1">
-            <img src="/public/mail-icon.png" alt="github logo" />
+          <div className="flex flex-col items-start justify-start">
+            {!isTabletOrMobile && (
+              <h1 className="text-4xl text-white/90 font-bold">Hi there! </h1>
+            )}
+            <span className="text-white/70">
+              I'm Gabriele, a 22 years old software developer based in Italy.
+            </span>
           </div>
-        </Card>
-      </div>
+        </div>
+      </Card>
       <StackWidget />
       <SpotifyWidget />
       <Card spanClass="col-span-6 md:col-span-4" bgClass="bg-black p-8">
@@ -54,9 +55,7 @@ function App() {
       </Card>
       <MapsWidget />
       <GithubWidget />
-      <Card sizeClass="h-72" spanClass="col-span-6" bgClass="bg-black">
-        <h1 className="text-2xl text-white">contact form</h1>
-      </Card>
+      <div className="col-span-6 p-6">{/* <Footer /> */}</div>
     </div>
   );
 }
