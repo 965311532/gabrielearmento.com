@@ -8,4 +8,10 @@
   html {
     font-family: "DM Sans", sans-serif;
   }
+
+  @screen 2xl {
+    :root {
+      font-size: 22px;
+    }
+  }
 }

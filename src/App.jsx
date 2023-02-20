@@ -11,7 +11,7 @@ function App() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
-    <div className="mx-auto grid max-w-3xl grid-cols-6 gap-5 p-4 md:p-10">
+    <div className="mx-auto grid max-w-3xl grid-cols-6 gap-5 p-4 md:p-10 2xl:max-w-[1200px] 2xl:gap-6">
       <Card sizeClass="h-full" spanClass="col-span-6" bgClass="bg-black">
         <div className="flex flex-col md:flex-row items-center justify-start w-full md:py-6 md:px-10 p-4">
           <div className="flex flex-row items-baseline justify-start w-full md:w-auto">

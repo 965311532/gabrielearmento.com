@@ -4,10 +4,17 @@ import Card from "./Card";
 
 import { SiSpotify } from "react-icons/si";
 
+function convertRemToPixels(rem) {
+  return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+}
+
 export default function SpotifyWidget() {
   const { song, isLoading, isError } = useLatestSong();
 
-  const RADIUS = 220;
+  // This does not recalculate on window
+  // resize, but it's good enough for now
+  const RADIUS_REM = 14;
+  const RADIUS_PX = convertRemToPixels(RADIUS_REM);
 
   return (
     <Card
@@ -42,12 +49,12 @@ export default function SpotifyWidget() {
           </div>
           <div className="absolute animate-spin-very-slow">
             <ReactCurvedText
-              width={RADIUS}
-              height={RADIUS}
-              cx={RADIUS / 2}
-              cy={RADIUS / 2}
-              rx={RADIUS / 2}
-              ry={RADIUS / 2}
+              width={RADIUS_PX}
+              height={RADIUS_PX}
+              cx={RADIUS_PX / 2}
+              cy={RADIUS_PX / 2}
+              rx={RADIUS_PX / 2}
+              ry={RADIUS_PX / 2}
               text={`${song.name} • ${song.artists.join(", ")} 🎵`}
               textProps={{
                 className: "text-sm uppercase",

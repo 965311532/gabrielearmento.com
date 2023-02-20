@@ -22,7 +22,10 @@ const selectLastNMonths = (n) => (data) => {
 
 export default function GitHubWidget() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isVeryLargeScreen = useMediaQuery({ query: "(min-width: 1500px)" });
   const [tooltipsEnabled, setTooltipsEnabled] = useState(true);
+
+  const nOfMonthsToDisplay = isTabletOrMobile ? 3 : isVeryLargeScreen ? 12 : 8;
 
   return (
     <Card
@@ -65,12 +68,10 @@ export default function GitHubWidget() {
             color: "#ffffff",
           }}
           theme={CALENDAR_THEME}
-          transformData={selectLastNMonths(isTabletOrMobile ? 3 : 8)}
+          transformData={selectLastNMonths(nOfMonthsToDisplay)}
           weekStart={1}
           labels={{
-            totalCount: `{{count}} contributions in the last ${
-              isTabletOrMobile ? 3 : 8
-            } months`,
+            totalCount: `{{count}} contributions in the last ${nOfMonthsToDisplay} months`,
           }}
         >
           {
