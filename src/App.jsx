@@ -9,12 +9,13 @@ import StackWidget from "./components/StackWidget";
 
 function App() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isSmallMobile = useMediaQuery({ query: "(max-width: 375px)" });
 
   return (
-    <div className="mx-auto grid max-w-3xl grid-cols-6 gap-5 p-4 md:p-10 2xl:max-w-[1200px] 2xl:gap-6">
+    <div className="mx-auto grid max-w-3xl grid-cols-6 gap-5 p-4 pt-8 md:p-10 2xl:max-w-[1200px] 2xl:gap-6">
       <Card
         sizeClass="h-full"
-        spanClass="col-span-6 relative"
+        spanClass="col-span-6 relative overflow-hidden"
         bgClass="bg-black"
       >
         <div className="flex flex-col md:flex-row items-center justify-start w-full md:py-6 md:px-10 p-4">
@@ -22,21 +23,18 @@ function App() {
             <img
               src="/pfp.png"
               alt="Profile Picture"
-              className="md:w-32 md:h-32 md:mr-4 w-20 h-20 absolute md:bottom-0 md:ml-8 md:mt-0 mt-2 top-0 md:left-0 md:right-auto right-0 md:top-auto md:rotate-0 -rotate-90"
+              className="md:w-32 md:h-32 md:mr-4 w-24 h-24 absolute md:bottom-0 md:ml-8 md:mt-0 top-0 md:left-0 md:right-auto right-0 md:top-auto md:rotate-0 rotate-180 mr-8 -mt-2
+              z-0 md:-mb-2 transform md:hover:-translate-y-1 transition-all duration-300 ease-in-out hover:translate-y-1"
             />
-            {isTabletOrMobile && (
-              <h1 className="font-display font-black text-[36px] sm:text-[40px] text-white/90">
-                Hi there! <span className="text-3xl">😃</span>
-              </h1>
-            )}
           </div>
           <div className="flex flex-col items-start justify-start md:ml-32">
-            {!isTabletOrMobile && (
-              <h1 className="font-display font-black text-4xl text-white/90 mt-2">
-                Hi there!
-              </h1>
-            )}
-            <span className="text-white/70">
+            <h1 className="font-display font-black text-4xl text-white/90 md:mt-2">
+              Hi there!
+              {isTabletOrMobile && !isSmallMobile && (
+                <span className="text-3xl"> 😃</span>
+              )}
+            </h1>
+            <span className="text-zinc-200 z-10 mt-2 md:mt-0">
               I'm Gabriele, a 22 years old software developer based in Italy.
             </span>
           </div>
@@ -49,7 +47,7 @@ function App() {
             <span>About me</span>
           </div>
         </div>
-        <span className="text-white">
+        <span className="text-zinc-200">
           Ciao, I'm Gabriele, a self-taught software developer based in Italy. I
           have a passion for automation, finance, and entrepreneurship. I highly
           value friendship, logic, and curiosity, and I'm always seeking to
