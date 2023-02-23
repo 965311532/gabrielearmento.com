@@ -12,7 +12,7 @@ function App() {
   const isSmallMobile = useMediaQuery({ query: "(max-width: 375px)" });
 
   return (
-    <div className="mx-auto grid max-w-3xl grid-cols-6 gap-5 p-4 pt-8 md:p-10 2xl:max-w-[1200px] 2xl:gap-6">
+    <div className="mx-auto grid max-w-3xl grid-cols-6 gap-5 p-5 pt-8 md:p-10 2xl:max-w-[1200px] 2xl:gap-6">
       <Card
         sizeClass="h-full"
         spanClass="col-span-6 relative overflow-hidden"
@@ -23,7 +23,7 @@ function App() {
             <img
               src="/pfp.png"
               alt="Profile Picture"
-              className="md:w-32 md:h-32 md:mr-4 w-24 h-24 absolute md:bottom-0 md:ml-8 md:mt-0 top-0 md:left-0 md:right-auto right-0 md:top-auto md:rotate-0 rotate-180 mr-8 -mt-2
+              className="md:w-32 md:h-32 md:mr-4 w-24 h-24 absolute md:bottom-0 md:ml-8 md:mt-0 top-0 md:left-0 md:right-auto right-0 md:top-auto md:rotate-0 rotate-180 mr-6 sm:mr-7 -mt-2
               z-0 md:-mb-2 transform md:hover:-translate-y-1 transition-all duration-300 ease-in-out hover:translate-y-1"
             />
           </div>
