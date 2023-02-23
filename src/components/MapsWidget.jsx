@@ -27,7 +27,7 @@ export default function MapsWidget() {
 
   return (
     <Card
-      sizeClass="h-full md:min-h-[0px] min-h-[500px]"
+      sizeClass="h-full md:min-h-[0px] min-h-[450px]"
       spanClass="col-span-6 md:col-span-2"
       bgClass="relative p-0 overflow-hidden group shadow-[inset_0_0_50px_-10px_rgba(0,0,0,0.5)]"
     >
@@ -37,20 +37,17 @@ export default function MapsWidget() {
       {/* Info overlay */}
       <div className="absolute z-20 top-0 left-0 w-full h-full bg-black/50 opacity-0 group-hover:opacity-100 rounded-xl transition-all duration-300 flex flex-col items-end justify-end p-6 leading-6">
         <span className="text-white/90">📍 I'm currently in</span>
-        <span className="text-2xl flex flex-row items-center text-white">
-          {
-            // if the location is loading, show a placeholder
-            isMapBlurred ? (
-              <span className="animate-pulse w-36 h-6 mt-2 rounded bg-gray-400/80"></span>
-            ) : (
-              <>
-                <span className="font-bold">{location.city}</span>
-                <span>{`, ${location.region.trim()}`}</span>
-                {/* <Flag country={location.region} className="ml-1" /> */}
-              </>
-            )
-          }
-        </span>
+        {
+          // if the location is loading, show a placeholder
+          isMapBlurred ? (
+            <span className="animate-pulse w-36 h-6 mt-2 rounded bg-gray-400/80"></span>
+          ) : (
+            <span className="text-end text-white text-2xl">
+              <b>{location.city}</b>, {location.region.trim()}
+              <Flag country={location.region} className="ml-1" />
+            </span>
+          )
+        }
       </div>
 
       {/* Placeholder blurred map */}
