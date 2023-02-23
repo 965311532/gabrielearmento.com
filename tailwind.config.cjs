@@ -8,7 +8,7 @@ module.exports = {
         "spin-very-slow": "spin 15s linear infinite",
       },
       fontFamily: {
-        display: ['"Fira Sans"', "sans-serif"],
+        display: ['"Darker Grotesque"', "sans-serif"],
       },
     },
   },
