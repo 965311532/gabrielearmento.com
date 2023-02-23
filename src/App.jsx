@@ -12,21 +12,29 @@ function App() {
 
   return (
     <div className="mx-auto grid max-w-3xl grid-cols-6 gap-5 p-4 md:p-10 2xl:max-w-[1200px] 2xl:gap-6">
-      <Card sizeClass="h-full" spanClass="col-span-6" bgClass="bg-black">
+      <Card
+        sizeClass="h-full"
+        spanClass="col-span-6 relative"
+        bgClass="bg-black"
+      >
         <div className="flex flex-col md:flex-row items-center justify-start w-full md:py-6 md:px-10 p-4">
           <div className="flex flex-row items-baseline justify-start w-full md:w-auto">
             <img
               src="/pfp.png"
               alt="Profile Picture"
-              className="md:w-20 md:h-20 mr-4 w-[40px] h-[40px]"
+              className="md:w-32 md:h-32 md:mr-4 w-20 h-20 absolute md:bottom-0 md:ml-8 md:mt-0 mt-2 top-0 md:left-0 md:right-auto right-0 md:top-auto md:rotate-0 -rotate-90"
             />
             {isTabletOrMobile && (
-              <h1 className="text-[40px] text-white/90 font-bold">Hi there!</h1>
+              <h1 className="font-display font-black text-[36px] sm:text-[40px] text-white/90">
+                Hi there! <span className="text-3xl">😃</span>
+              </h1>
             )}
           </div>
-          <div className="flex flex-col items-start justify-start">
+          <div className="flex flex-col items-start justify-start md:ml-32">
             {!isTabletOrMobile && (
-              <h1 className="text-4xl text-white/90 font-bold">Hi there!</h1>
+              <h1 className="font-display font-black text-4xl text-white/90 mt-2">
+                Hi there!
+              </h1>
             )}
             <span className="text-white/70">
               I'm Gabriele, a 22 years old software developer based in Italy.
