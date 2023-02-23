@@ -33,7 +33,7 @@ const projects = [
 function ProjectLink({ url, name }) {
   return (
     <a
-      className="inline-flex flex-row items-center text-zinc-100 hover:text-blue-400 transition-all duration-300 ease-out hover:underline"
+      className="inline-flex underline flex-row items-center text-zinc-100 hover:text-blue-400 transition-all duration-300 ease-out hover:underline"
       href={url}
       target="_blank"
       rel="noreferrer"
@@ -48,7 +48,7 @@ function Project({ icon, name, description, url, github }) {
     <div className="flex flex-row flex-shrink items-start md:items-center justify-start text-left mb-4">
       <img src={icon} className="w-7 h-7 pt-1 md:pt-0 md:w-10 md:h-10 mr-4" />
       <div className="flex flex-col">
-        <span className="text-lg font-bold font-display text-white/90">
+        <span className="text-xl font-bold font-display text-white/90">
           {name}
         </span>
         <span className="text-white/80">
