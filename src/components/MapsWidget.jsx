@@ -45,13 +45,13 @@ export default function MapsWidget() {
 
   return (
     <Card
-      sizeClass="h-full"
+      sizeClass="h-full md:min-h-[0px] min-h-[500px]"
       spanClass="col-span-6 md:col-span-2"
-      bgClass="bg-black relative p-0 overflow-hidden group"
+      bgClass="relative p-0 overflow-hidden group shadow-[inset_0_0_50px_-10px_rgba(0,0,0,0.5)]"
     >
       {!isMapBlurred && <PulsingDot className="z-10" />}
 
-      <div className="absolute z-20 top-0 left-0 w-full h-full bg-black/50 hidden group-hover:block">
+      <div className="absolute z-20 top-0 left-0 w-full h-full bg-black/50 opacity-0 group-hover:opacity-100 rounded-xl transition-all duration-300">
         <div className="flex flex-col items-end justify-end h-full w-full p-6">
           <span className="leading-6 text-white/90">📍 I'm currently in</span>
           <span className="leading-6 text-2xl flex flex-row items-center text-white">
@@ -70,7 +70,7 @@ export default function MapsWidget() {
         src={latestLocation.map}
         alt="latest location"
         className={clsx(
-          "w-full h-full object-cover scale-110", // make the image fill the container
+          "w-full h-full object-cover scale-110 z-[-1] relative", // make the image fill the container
           isMapBlurred ? "filter blur-sm" : "filter-none" // blur the image
         )}
       />
