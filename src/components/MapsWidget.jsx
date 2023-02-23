@@ -1,11 +1,12 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
+import useLatestLocation from "../hooks/useLatestLocation";
 import Card from "./Card";
 import Flag from "./Flag";
 
 function PulsingDot({ className }) {
   return (
-    <div className={clsx("absolute w-full h-full", className)}>
+    <div className={clsx("absolute w-full h-full select-none", className)}>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <span className="block h-8 w-8 animate-ping-slow rounded-full bg-blue-400"></span>
       </div>
@@ -20,28 +21,9 @@ function PulsingDot({ className }) {
 }
 
 export default function MapsWidget() {
-  const [latestLocation, setLatestLocation] = useState({
-    city: "Loading...", // This will show while loading
-    region: "",
-    map: "/maps-placeholder.png",
-  });
+  const { location, isLoading } = useLatestLocation();
   const [isMapBlurred, setIsMapBlurred] = useState(true);
-
-  const fetchImage = async () => {
-    const locationData = await fetch("/api/latest-location");
-    const location = await locationData.json();
-    // Download image and create blob to obscure api key
-    const mapData = await fetch(location.map);
-    const mapBlob = await mapData.blob();
-    location.map = URL.createObjectURL(mapBlob);
-    // Update state
-    setLatestLocation(location);
-    setIsMapBlurred(false);
-  };
-
-  useEffect(() => {
-    fetchImage();
-  }, []);
+  const placeholderImage = "/maps-placeholder.png";
 
   return (
     <Card
@@ -49,29 +31,44 @@ export default function MapsWidget() {
       spanClass="col-span-6 md:col-span-2"
       bgClass="relative p-0 overflow-hidden group shadow-[inset_0_0_50px_-10px_rgba(0,0,0,0.5)]"
     >
+      {/* Pulsing dot */}
       {!isMapBlurred && <PulsingDot className="z-10" />}
 
-      <div className="absolute z-20 top-0 left-0 w-full h-full bg-black/50 opacity-0 group-hover:opacity-100 rounded-xl transition-all duration-300">
-        <div className="flex flex-col items-end justify-end h-full w-full p-6">
-          <span className="leading-6 text-white/90">📍 I'm currently in</span>
-          <span className="leading-6 text-2xl flex flex-row items-center text-white">
-            <span className="font-bold">{latestLocation.city}</span>
-            {latestLocation.region && (
+      {/* Info overlay */}
+      <div className="absolute z-20 top-0 left-0 w-full h-full bg-black/50 opacity-0 group-hover:opacity-100 rounded-xl transition-all duration-300 flex flex-col items-end justify-end p-6 leading-6">
+        <span className="text-white/90">📍 I'm currently in</span>
+        <span className="text-2xl flex flex-row items-center text-white">
+          {
+            // if the location is loading, show a placeholder
+            isMapBlurred ? (
+              <span className="animate-pulse w-36 h-6 mt-2 rounded bg-gray-400/80"></span>
+            ) : (
               <>
-                <span className="">{`, ${latestLocation.region.trim()}`}</span>
-                <Flag country={latestLocation.region} className="ml-1" />
+                <span className="font-bold">{location.city}</span>
+                <span>{`, ${location.region.trim()}`}</span>
+                <Flag country={location.region} className="ml-1" />
               </>
-            )}
-          </span>
-        </div>
+            )
+          }
+        </span>
       </div>
 
+      {/* Placeholder blurred map */}
       <img
-        src={latestLocation.map}
-        alt="latest location"
+        src={placeholderImage}
         className={clsx(
-          "w-full h-full object-cover scale-110 z-[-1] relative", // make the image fill the container
-          isMapBlurred ? "filter blur-sm" : "filter-none" // blur the image
+          "w-full h-full object-cover scale-110 z-[-1] relative",
+          isMapBlurred ? "filter blur-sm" : "hidden"
+        )}
+      />
+
+      {/* Actual map */}
+      <img
+        src={location.map}
+        onLoad={() => setIsMapBlurred(false)}
+        className={clsx(
+          "w-full h-full object-cover scale-110 z-[-1] relative",
+          isMapBlurred && "hidden"
         )}
       />
     </Card>
