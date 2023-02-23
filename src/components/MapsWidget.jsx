@@ -46,7 +46,7 @@ export default function MapsWidget() {
               <>
                 <span className="font-bold">{location.city}</span>
                 <span>{`, ${location.region.trim()}`}</span>
-                <Flag country={location.region} className="ml-1" />
+                {/* <Flag country={location.region} className="ml-1" /> */}
               </>
             )
           }
