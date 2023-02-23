@@ -6,13 +6,14 @@ import GithubWidget from "./components/GithubWidget";
 import MapsWidget from "./components/MapsWidget";
 import SpotifyWidget from "./components/SpotifyWidget";
 import StackWidget from "./components/StackWidget";
+import WorkWidget from "./components/WorkWidget";
 
 function App() {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const isSmallMobile = useMediaQuery({ query: "(max-width: 375px)" });
 
   return (
-    <div className="mx-auto grid max-w-3xl grid-cols-6 gap-5 p-5 pt-8 md:p-10 2xl:max-w-[1200px] 2xl:gap-6">
+    <div className="mx-auto grid max-w-3xl grid-cols-6 gap-5 p-5 pt-8 md:p-10 2xl:max-w-[1200px] 2xl:gap-6 scroll-smooth">
       <Card
         sizeClass="h-full"
         spanClass="col-span-6 relative overflow-hidden"
@@ -35,11 +36,12 @@ function App() {
               )}
             </h1>
             <span className="text-zinc-200 z-10 mt-2 md:mt-0">
-              I'm Gabriele, a 22 years old software developer based in Italy.
+              I'm Gabriele, a 22 y/o software developer based in Italy.
             </span>
           </div>
         </div>
       </Card>
+      <WorkWidget />
       <Card spanClass="col-span-6 md:col-span-4" bgClass="bg-black p-8">
         <div className="w-full">
           <div className="text-lg uppercase font-bold font-display text-white/90 inline-flex flex-row flex-shrink items-center justify-start text-left mb-4">
