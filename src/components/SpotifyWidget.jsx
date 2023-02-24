@@ -2,6 +2,7 @@ import ReactCurvedText from "react-curved-text";
 import { CgSpinner } from "react-icons/cg";
 import { SiSpotify } from "react-icons/si";
 import { clsxm } from "../../lib/utils";
+import vinylImg from "../assets/images/vinyl-record.png";
 import useLatestSong from "../hooks/useLatestSong";
 import { CardHeader } from "./Card";
 
@@ -55,24 +56,21 @@ export default function SpotifyWidget() {
         <>
           <SpotifyCardHeader playing={song.isPlaying} />
 
-          <div className="relative w-full h-full flex items-center justify-center py-16 md:py-0">
+          <div className="relative w-full h-full flex items-center justify-center py-24 md:py-20 md:pb-16">
             {/* Album cover */}
-            <div className="flex flex-col justify-center items-center z-10">
-              <a
-                href={song.url}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:opacity-80 hover:scale-105 transition-all duration-300"
-              >
+            <div className="flex flex-col justify-center items-center z-20">
+              <a href={song.url} target="_blank" rel="noreferrer">
                 <img
                   src={song.images[0].url}
                   alt="album cover"
-                  className="w-36 h-36 rounded-sm"
+                  className={clsxm("w-24 h-24 rounded-sm", {
+                    "animate-spin-very-slow": song.isPlaying,
+                  })}
                 />
               </a>
             </div>
             {/* Rotating text */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
               <div
                 className={clsxm(song.isPlaying && "animate-spin-very-slow")}
               >
@@ -90,6 +88,16 @@ export default function SpotifyWidget() {
                   }}
                 />
               </div>
+            </div>
+            {/* Vinyl */}
+            <div className="flex justify-center items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full z-0">
+              <img
+                src={vinylImg}
+                alt="vinyl"
+                className={clsxm("w-64 h-auto rounded-sm", {
+                  "animate-spin-very-slow": song.isPlaying,
+                })}
+              />
             </div>
           </div>
         </>

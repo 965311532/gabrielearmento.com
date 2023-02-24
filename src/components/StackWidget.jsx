@@ -11,10 +11,13 @@ import {
   SiPandas,
   SiPython,
   SiReact,
+  SiStackoverflow,
   SiTailwindcss,
   SiUbuntu,
   SiVercel,
   SiVisualstudiocode,
+  SiVite,
+  Si1Password
 } from "react-icons/si";
 
 const tools = [
@@ -69,6 +72,21 @@ const tools = [
     icon: SiUbuntu,
     name: "Ubuntu",
     url: "https://ubuntu.com/",
+  },
+  {
+    icon: SiStackoverflow,
+    name: "Stack Overflow",
+    url: "https://stackoverflow.com/",
+  },
+  {
+    icon: SiVite,
+    name: "Vite",
+    url: "https://vitejs.dev/",
+  },
+  {
+    icon: Si1Password,
+    name: "1Password",
+    url: "https://1password.com/",
   },
 ];
 

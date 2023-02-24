@@ -17,9 +17,9 @@ export function Card({ className, children }) {
     <div
       className={clsxm(
         "bg-black shadow-[inset_0_0_500px_-10px_rgba(255,255,255,0.1)]",
-        "p-8 md:p-12 rounded-xl md:rounded-xl",
+        "p-10 md:p-12 rounded-xl md:rounded-xl",
         "ring-1 ring-zinc-800/70 ",
-        "flex flex-col justify-center items-center",
+        "flex flex-col justify-between items-center",
         "overflow-hidden",
         className
       )}
