@@ -1,12 +1,11 @@
-import clsx from "clsx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { clsxm } from "../../lib/utils";
 import useLatestLocation from "../hooks/useLatestLocation";
-import Card from "./Card";
 import Flag from "./Flag";
 
 function PulsingDot({ className }) {
   return (
-    <div className={clsx("absolute w-full h-full select-none", className)}>
+    <div className={clsxm("absolute w-full h-full select-none", className)}>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <span className="block h-8 w-8 animate-ping-slow rounded-full bg-blue-400"></span>
       </div>
@@ -26,14 +25,9 @@ export default function MapsWidget() {
   const placeholderImage = "/maps-placeholder.png";
 
   return (
-    <Card
-      sizeClass="h-full md:min-h-[0px] min-h-[450px]"
-      spanClass="col-span-6 md:col-span-2"
-      bgClass="relative p-0 overflow-hidden group shadow-[inset_0_0_50px_-10px_rgba(0,0,0,0.5)]"
-    >
+    <div className="relative w-full h-full group">
       {/* Pulsing dot */}
       {!isMapBlurred && <PulsingDot className="z-10" />}
-
       {/* Info overlay */}
       <div className="absolute z-20 top-0 left-0 w-full h-full bg-black/50 opacity-0 group-hover:opacity-100 rounded-xl transition-all duration-300 flex flex-col items-end justify-end p-6 leading-6">
         <span className="text-white/90">📍 I'm currently in</span>
@@ -49,25 +43,23 @@ export default function MapsWidget() {
           )
         }
       </div>
-
       {/* Placeholder blurred map */}
       <img
         src={placeholderImage}
-        className={clsx(
+        className={clsxm(
           "w-full h-full object-cover scale-110 z-[-1] relative",
           isMapBlurred ? "filter blur-sm" : "hidden"
         )}
       />
-
       {/* Actual map */}
       <img
         src={location.map}
         onLoad={() => setIsMapBlurred(false)}
-        className={clsx(
+        className={clsxm(
           "w-full h-full object-cover scale-110 z-[-1] relative",
           isMapBlurred && "hidden"
         )}
       />
-    </Card>
+    </div>
   );
 }

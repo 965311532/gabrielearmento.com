@@ -1,9 +1,7 @@
-import { MdWork } from "react-icons/md";
 import { RiExternalLinkFill } from "react-icons/ri";
 import genoleggiappLogo from "../assets/images/genoleggiapp-logo.png";
 import personalWebsiteLogo from "../assets/images/personal-website-logo.svg";
 import tapTheTroutLogo from "../assets/images/tap-the-trout-logo.svg";
-import Card from "./Card";
 
 const projects = [
   {
@@ -22,7 +20,7 @@ const projects = [
   },
   {
     icon: tapTheTroutLogo,
-    name: "Tap the trout",
+    name: "Tap The Trout",
     description:
       "A fun little clicker game that I made with a friend. It's a tribute to the classic 'Cookie Clicker' game.",
     url: "https://tapthetrout.com/",
@@ -63,21 +61,10 @@ function Project({ icon, name, description, url, github }) {
 
 export default function WorkWidget() {
   return (
-    <Card
-      spanClass="col-span-6 md:col-span-6 max-h-[500px] md:max-h-[400px] overflow-y-auto"
-      bgClass="bg-black p-10"
-    >
-      <div className="w-full">
-        <div className="text-lg uppercase font-bold font-display text-white/90 inline-flex flex-row flex-shrink items-center justify-start text-left mb-4">
-          <MdWork className="mr-2" />
-          <span>My work</span>
-        </div>
-      </div>
-      <div className="flex flex-col overflow-auto scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-zinc-900/50 pr-8 -mr-10 scroll-smooth">
-        {projects.map((project, index) => {
-          return <Project key={index} {...project} />;
-        })}
-      </div>
-    </Card>
+    <div className="flex flex-col overflow-auto scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-zinc-900/50 pr-8 -mr-12 scroll-smooth">
+      {projects.map((project, index) => {
+        return <Project key={index} {...project} />;
+      })}
+    </div>
   );
 }

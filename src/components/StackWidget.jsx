@@ -1,4 +1,3 @@
-import { FaTools } from "react-icons/fa";
 import {
   SiAmazonaws,
   SiDocker,
@@ -17,7 +16,6 @@ import {
   SiVercel,
   SiVisualstudiocode,
 } from "react-icons/si";
-import Card from "./Card";
 
 const tools = [
   {
@@ -76,29 +74,21 @@ const tools = [
 
 export default function StackWidget() {
   return (
-    <Card spanClass="col-span-6 md:col-span-3" bgClass="bg-black p-10">
-      <div className="w-full">
-        <div className="text-lg uppercase font-bold font-display text-white/90 inline-flex flex-row flex-shrink items-center justify-start text-left mb-4">
-          <FaTools className="mr-2" />
-          <span>My Tools</span>
-        </div>
-      </div>
-      <div className="text-white grid grid-cols-4 gap-1">
-        {/* Show the icons with the right color and set a tooltip on each element */}
-        {tools.map((tool, index) => {
-          const Icon = tool.icon;
-          return (
-            <a
-              key={index}
-              className="flex flex-col items-center justify-center m-2"
-              href={tool.url}
-              target="_blank"
-            >
-              <Icon className="text-4xl" title={tool.name} />
-            </a>
-          );
-        })}
-      </div>
-    </Card>
+    <div className="text-white grid grid-cols-4 gap-1">
+      {/* Show the icons with the right color and set a tooltip on each element */}
+      {tools.map((tool, index) => {
+        const Icon = tool.icon;
+        return (
+          <a
+            key={index}
+            className="flex flex-col items-center justify-center m-2"
+            href={tool.url}
+            target="_blank"
+          >
+            <Icon className="text-4xl" title={tool.name} />
+          </a>
+        );
+      })}
+    </div>
   );
 }

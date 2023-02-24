@@ -1,6 +1,9 @@
-import { SiSuperuser } from "react-icons/si";
+import { FaTools } from "react-icons/fa";
+import { MdWork } from "react-icons/md";
+import { SiGithub, SiSuperuser } from "react-icons/si";
 import { useMediaQuery } from "react-responsive";
-import Card from "./components/Card";
+import { clsxm } from "../lib/utils";
+import { Card, CardHeader } from "./components/Card";
 import Footer from "./components/Footer";
 import GithubWidget from "./components/GithubWidget";
 import MapsWidget from "./components/MapsWidget";
@@ -14,12 +17,9 @@ function App() {
 
   return (
     <div className="mx-auto grid max-w-3xl grid-cols-6 gap-5 p-5 pt-8 md:p-10 2xl:max-w-[1200px] 2xl:gap-6 scroll-smooth">
-      <Card
-        sizeClass="h-full"
-        spanClass="col-span-6 relative overflow-hidden"
-        bgClass="bg-black"
-      >
-        <div className="flex flex-col md:flex-row items-center justify-start w-full md:py-6 md:px-10 p-4">
+      {/* Greetings card */}
+      <Card className="col-span-6 relative">
+        <div className="flex flex-col md:flex-row items-center justify-start w-full">
           <div className="flex flex-row items-baseline justify-start w-full md:w-auto">
             <img
               src="/pfp.png"
@@ -41,14 +41,16 @@ function App() {
           </div>
         </div>
       </Card>
-      <WorkWidget />
-      <Card spanClass="col-span-6 md:col-span-4" bgClass="bg-black p-8">
-        <div className="w-full">
-          <div className="text-lg uppercase font-bold font-display text-white/90 inline-flex flex-row flex-shrink items-center justify-start text-left mb-4">
-            <SiSuperuser className="mr-2" />
-            <span>About me</span>
-          </div>
-        </div>
+
+      {/* Projects card */}
+      <Card className="col-span-6 md:col-span-6 max-h-[500px] md:max-h-[400px] overflow-y-auto">
+        <CardHeader title="My projects" icon={MdWork} />
+        <WorkWidget />
+      </Card>
+
+      {/* About me card */}
+      <Card className="col-span-6 md:col-span-4">
+        <CardHeader title="About me" icon={SiSuperuser} />
         <span className="text-zinc-200">
           Ciao, I'm Gabriele, a self-taught software developer based in Italy. I
           have a passion for automation, finance, and entrepreneurship. I highly
@@ -58,10 +60,36 @@ function App() {
           and see how we can work together!
         </span>
       </Card>
-      <MapsWidget />
-      <StackWidget />
-      <SpotifyWidget />
-      <GithubWidget />
+
+      {/* Map widget */}
+      <Card
+        className={clsxm(
+          "col-span-6 md:col-span-2 md:min-h-[0px] min-h-[450px]",
+          "bg-transparent p-0 md:p-0",
+          "shadow-[inset_0_0_50px_-10px_rgba(0,0,0,0.5)]"
+        )}
+      >
+        <MapsWidget />
+      </Card>
+
+      {/* Stack widget */}
+      <Card className="col-span-6 md:col-span-3">
+        <CardHeader title="My tools" icon={FaTools} />
+        <StackWidget />
+      </Card>
+
+      {/* Spotify widget */}
+      <Card className="col-span-6 md:col-span-3 min-h-[300px]">
+        <SpotifyWidget />
+      </Card>
+
+      {/* Github widget */}
+      <Card className="col-span-6">
+        <CardHeader title="Github contributions" icon={SiGithub} />
+        <GithubWidget />
+      </Card>
+
+      {/* Footer */}
       <div className="col-span-6 p-6">
         <Footer />
       </div>
