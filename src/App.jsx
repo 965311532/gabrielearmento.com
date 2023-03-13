@@ -39,7 +39,7 @@ function App() {
               I'm Gabriele, a{" "}
               {
                 // Calculate my age
-                new Date(new Date() - new Date("2000-9-8")).getFullYear() - 1970
+                new Date(new Date() - new Date(2000, 8, 8)).getFullYear() - 1970
               }{" "}
               y/o software developer based in Italy.
             </span>
