@@ -1,21 +1,23 @@
+import genoleggiappDemoLogo from "../assets/images/genoleggiapp-demo-logo.svg";
 import genoleggiappLogo from "../assets/images/genoleggiapp-logo.png";
 import personalWebsiteLogo from "../assets/images/personal-website-logo.svg";
+import pieChartImg from "../assets/images/pie-chart.png";
 import tapTheTroutLogo from "../assets/images/tap-the-trout-logo.svg";
 import { SickLink } from "./SickLink";
 
 const projects = [
   {
     icon: genoleggiappLogo,
-    name: "Genoleggiapp",
+    name: "Genoleggiapp 🔒",
     description:
-      "A portal for Genoleggia S.p.A. to manage their customer and long-term-rental offers.",
+      "A full-fledged portal for Genoleggia S.p.A. to manage their internal processes, B2B and B2C offers and customer relations.",
     url: "https://app.genoleggia.com/",
   },
   {
     icon: personalWebsiteLogo,
     name: "My personal website",
     description:
-      "A simple react website to showcase my projects and skills. It's also a playground for me to try new things.",
+      "A simple React website to showcase my projects and skills. It's also a playground for me to try new things.",
     github: "https://github.com/965311532/personal-website",
   },
   {
@@ -25,6 +27,21 @@ const projects = [
       "A fun little clicker game that I made with a friend. It's a tribute to the classic 'Cookie Clicker' game.",
     url: "https://tapthetrout.com/",
     github: "https://github.com/965311532/tap-the-trout",
+  },
+  {
+    icon: genoleggiappDemoLogo,
+    name: "Genoleggiapp showcase",
+    description:
+      "The very first version of the Genoleggiapp portal. It was made in a few days to showcase the idea to the client.",
+    url: "https://www.genoleggia.it/demo/index.html",
+  },
+  {
+    icon: pieChartImg,
+    name: "Trading signals research",
+    description:
+      "A research project I conducted to determine the actual performance of a certain paid trading signals group.",
+    url: "https://nbviewer.org/github/965311532/backtesting-results/blob/master/backtesting-results.ipynb?flush-cache=True",
+    github: "https://github.com/965311532/backtesting-results",
   },
 ];
 
@@ -48,7 +65,7 @@ function Project({ icon, name, description, url, github }) {
 
 export default function WorkWidget() {
   return (
-    <div className="flex flex-col overflow-auto scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-zinc-900/50 pr-8 -mr-12 scroll-smooth">
+    <div className="flex flex-col">
       {projects.map((project, index) => {
         return <Project key={index} {...project} />;
       })}

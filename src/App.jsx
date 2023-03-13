@@ -43,7 +43,7 @@ function App() {
       </Card>
 
       {/* Projects card */}
-      <Card className="col-span-6 md:col-span-6 max-h-[500px] md:max-h-[400px] overflow-y-auto">
+      <Card className="col-span-6 md:col-span-6">
         <CardHeader title="My projects" icon={MdWork} />
         <WorkWidget />
       </Card>
