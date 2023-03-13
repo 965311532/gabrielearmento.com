@@ -58,7 +58,8 @@ export default function SpotifyWidget() {
 
           <div className="relative w-full h-full flex items-center justify-center py-24 md:py-20 md:pb-16">
             {/* Album cover */}
-            <div className="flex flex-col justify-center items-center z-20">
+            {/* Not sure why but the md:mb-4 fixes the image alignment on the vynil */}
+            <div className="flex flex-col justify-center items-center z-20 md:mb-4">
               <a href={song.url} target="_blank" rel="noreferrer">
                 <img
                   src={song.images[0].url}
@@ -94,7 +95,7 @@ export default function SpotifyWidget() {
               <img
                 src={vinylImg}
                 alt="vinyl"
-                className={clsxm("w-64 h-auto rounded-sm", {
+                className={clsxm("w-64 h-auto", {
                   "animate-spin-very-slow": song.isPlaying,
                 })}
               />
