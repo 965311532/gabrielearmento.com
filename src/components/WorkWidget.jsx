@@ -1,7 +1,7 @@
-import { RiExternalLinkFill } from "react-icons/ri";
 import genoleggiappLogo from "../assets/images/genoleggiapp-logo.png";
 import personalWebsiteLogo from "../assets/images/personal-website-logo.svg";
 import tapTheTroutLogo from "../assets/images/tap-the-trout-logo.svg";
+import { SickLink } from "./SickLink";
 
 const projects = [
   {
@@ -28,19 +28,6 @@ const projects = [
   },
 ];
 
-function ProjectLink({ url, name }) {
-  return (
-    <a
-      className="inline-flex underline flex-row items-center text-zinc-100 hover:text-blue-400 transition-all duration-300 ease-out hover:underline"
-      href={url}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {name} <RiExternalLinkFill className="inline-block ml-1" />
-    </a>
-  );
-}
-
 function Project({ icon, name, description, url, github }) {
   return (
     <div className="flex flex-row flex-shrink items-start md:items-center justify-start text-left mb-4">
@@ -50,9 +37,9 @@ function Project({ icon, name, description, url, github }) {
           {name}
         </span>
         <span className="text-white/80">
-          {description} {github && <ProjectLink url={github} name="GitHub" />}
+          {description} {github && <SickLink href={github} name="GitHub" />}
           {url && github && " • "}
-          {url && <ProjectLink url={url} name="Check it out" />}
+          {url && <SickLink href={url} name="Check it out" />}
         </span>
       </div>
     </div>

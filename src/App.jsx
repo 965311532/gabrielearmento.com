@@ -1,10 +1,10 @@
 import { FaTools } from "react-icons/fa";
-import { MdWork } from "react-icons/md";
+import { MdContactPhone, MdWork } from "react-icons/md";
 import { SiGithub, SiSuperuser } from "react-icons/si";
 import { useMediaQuery } from "react-responsive";
 import { clsxm } from "../lib/utils";
 import { Card, CardHeader } from "./components/Card";
-import Footer from "./components/Footer";
+import FooterWidget from "./components/FooterWidget";
 import GithubWidget from "./components/GithubWidget";
 import MapsWidget from "./components/MapsWidget";
 import SpotifyWidget from "./components/SpotifyWidget";
@@ -90,9 +90,10 @@ function App() {
       </Card>
 
       {/* Footer */}
-      <div className="col-span-6 p-6">
-        <Footer />
-      </div>
+      <Card className="col-span-6">
+        <CardHeader title="Contact me" icon={MdContactPhone} />
+        <FooterWidget />
+      </Card>
     </div>
   );
 }
