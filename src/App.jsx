@@ -74,7 +74,7 @@ function App() {
 
       {/* Stack widget */}
       <Card className="col-span-6 md:col-span-3">
-        <CardHeader title="My tools" icon={FaTools} />
+        <CardHeader title="My favourite tools" icon={FaTools} />
         <StackWidget />
       </Card>
 

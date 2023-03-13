@@ -4,7 +4,7 @@ export function CardHeader({ title, icon: Icon }) {
   return (
     <div className="w-full mb-4">
       <div className="text-lg uppercase font-bold font-display text-white/90 inline-flex flex-row flex-shrink items-center justify-start text-left">
-        <Icon className="mr-2" />
+        <Icon className="mr-2 -mb-[2px]" />
         <span>{title}</span>
       </div>
     </div>
