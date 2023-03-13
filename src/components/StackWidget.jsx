@@ -1,23 +1,22 @@
 import {
   SiAmazonaws,
+  SiAmazonrds,
+  SiAmazons3,
   SiDocker,
   SiFlask,
   SiGit,
   SiGithub,
   SiJavascript,
-  SiMongodb,
   SiMysql,
   SiNodedotjs,
   SiPandas,
   SiPython,
   SiReact,
-  SiStackoverflow,
+  SiRender,
   SiTailwindcss,
-  SiUbuntu,
   SiVercel,
   SiVisualstudiocode,
   SiVite,
-  Si1Password
 } from "react-icons/si";
 
 const tools = [
@@ -34,7 +33,7 @@ const tools = [
     name: "Javascript",
     url: "https://www.javascript.com/",
   },
-  { icon: SiMongodb, name: "MongoDB", url: "https://www.mongodb.com/" },
+  { icon: SiAmazons3, name: "S3", url: "https://aws.amazon.com/s3/" },
   { icon: SiNodedotjs, name: "Node.js", url: "https://nodejs.org/en/" },
   { icon: SiPython, name: "Python", url: "https://www.python.org/" },
   { icon: SiReact, name: "React", url: "https://reactjs.org/" },
@@ -69,24 +68,19 @@ const tools = [
     url: "https://www.mysql.com/",
   },
   {
-    icon: SiUbuntu,
-    name: "Ubuntu",
-    url: "https://ubuntu.com/",
+    icon: SiRender,
+    name: "Render",
+    url: "https://render.com/",
   },
   {
-    icon: SiStackoverflow,
-    name: "Stack Overflow",
-    url: "https://stackoverflow.com/",
+    icon: SiAmazonrds,
+    name: "RDS",
+    url: "https://aws.amazon.com/rds/",
   },
   {
     icon: SiVite,
     name: "Vite",
     url: "https://vitejs.dev/",
-  },
-  {
-    icon: Si1Password,
-    name: "1Password",
-    url: "https://1password.com/",
   },
 ];
 
