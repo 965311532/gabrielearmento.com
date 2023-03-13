@@ -36,7 +36,12 @@ function App() {
               )}
             </h1>
             <span className="text-zinc-200 z-10 mt-2 md:mt-0">
-              I'm Gabriele, a 22 y/o software developer based in Italy.
+              I'm Gabriele, a{" "}
+              {
+                // Calculate my age
+                new Date(new Date() - new Date("2000-9-8")).getFullYear() - 1970
+              }{" "}
+              y/o software developer based in Italy.
             </span>
           </div>
         </div>
