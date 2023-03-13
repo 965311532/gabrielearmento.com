@@ -30,13 +30,15 @@ export default function MapsWidget() {
       {!isMapBlurred && <PulsingDot className="z-10" />}
       {/* Info overlay */}
       <div className="absolute z-20 top-0 left-0 w-full h-full bg-black/50 opacity-0 group-hover:opacity-100 rounded-xl transition-all duration-300 flex flex-col items-end justify-end p-6 leading-6">
-        <span className="text-white/90">📍 I'm currently in</span>
+        <span className="text-zinc-100 uppercase text-xs font-semibold">
+          📍 Currently in
+        </span>
         {
           // if the location is loading, show a placeholder
           isMapBlurred ? (
             <span className="animate-pulse w-36 h-6 mt-2 rounded bg-gray-400/80"></span>
           ) : (
-            <span className="text-end text-white text-2xl">
+            <span className="text-end text-white text-xl">
               <b>{location.city}</b>, {location.region.trim()}
               <Flag country={location.region} className="ml-1" />
             </span>
