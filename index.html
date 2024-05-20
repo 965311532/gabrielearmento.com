@@ -1,73 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
+<html>
 
-    <title>Gabriele Armento | Full Stack Developer</title>
-    <meta
-      name="description"
-      content="Hi! My name is Gabriele and I am a passionate builder who is always looking for new challenges and opportunities to learn and grow. Get to know me!"
-    />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gabriele Armento</title>
+    <style type="text/css">
+        body {
+            background: #161616;
+            margin: 40px auto;
+            padding: 0px 20px;
+            max-width: 650px;
+            line-height: 1.6;
+            font-size: 18px;
+            color: #E0E0E0;
+        }
 
-    <!-- Preload google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Darker+Grotesque:wght@300;400;700;900&display=swap"
-      rel="stylesheet"
-    />
+        h1,
+        h2,
+        h3 {
+            line-height: 1.2;
+            margin-top: 2em;
+        }
 
-    <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://gabrielearmento.com" />
+        a {
+            color: #5797ff
+        }
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.gabrielearmento.com" />
-    <meta
-      property="og:title"
-      content="Gabriele Armento | Full Stack Developer"
-    />
-    <meta
-      property="og:description"
-      content="Hi! My name is Gabriele and I am a passionate builder who is always looking for new challenges and opportunities to learn and grow. Get to know me!"
-    />
-    <meta
-      property="og:image"
-      content="https://gabrielearmento.com/preview.png"
-    />
+        a:hover {
+            color: #166fff
+        }
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://www.gabrielearmento.com" />
-    <meta
-      property="twitter:title"
-      content="Gabriele Armento | Full Stack Developer"
-    />
-    <meta
-      property="twitter:description"
-      content="Hi! My name is Gabriele and I am a passionate builder who is always looking for new challenges and opportunities to learn and grow. Get to know me!"
-    />
-    <meta
-      property="twitter:image"
-      content="https://gabrielearmento.com/preview.png"
-    />
+        a:visited {
+            color: #c8990b
+        }
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
-    <link rel="icon" type="image/png" href="/favicons/favicon.png" />
+        ul li {
+            padding-bottom: 0.25em
+        }
+    </style>
+</head>
 
-    <!-- Plausible -->
-    <script
-      defer
-      data-domain="gabrielearmento.com"
-      src="https://plausible.io/js/script.js"
-    ></script>
-  </head>
-  <body
-    class="scroll-smooth w-screen overflow-x-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black via-black/95 to-[rgba(0,0,5,0.95)]"
-  >
-    <div id="root"></div>
-    <script type="module" defer src="/src/main.jsx"></script>
-  </body>
+<body>
+    <header>
+        <aside><em>(last update: 2024-5-20)</em></aside>
+        <h1>
+            Gabriele Armento
+        </h1>
+        <aside>Full stack dev, cloud architect, ml student - based in italy</aside>
+    </header>
+    <h2>Welcome to my website</h2>
+    <p>
+        <strong>What is this?</strong>
+    </p>
+    <p>
+        This is a simple website that I made to introduce myself and show you a few things I've made. You can jump to
+        specific sections here:</p>
+    <ul>
+        <li>
+            <a href="#about">About me</a>
+        </li>
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+        <li>
+            <a href="#what-i-think-i-can-do">What I think I can do</a>
+        </li>
+        <li>
+            <a href="#contact">Contact me</a>
+        </li>
+        <li>
+            <a href="#blog">Blog & Newsletter</a>
+        </li>
+        <li>
+            <a href="#why-is-this-website-so-simple">Why is this website so simple?</a>
+        </li>
+    </ul>
+    <h3 id="about">About me</h3>
+    <p>
+        I'm a full stack developer (mostly web dev and etl systems), cloud architect and machine learning student. I
+        currently work as a freelance developer and I mainly consult a few companies in Italy (right now I'm working
+        closely with the <a href="https://www.ego.energy/" target="_blank">EGO</a> team).
+
+    </p>
+        
+    <h3 id="projects">Projects</h3>
+    <p>
+        Here are a few projects I've worked on:
+    </p>
+    <ul>
+        <li>This website, 2024</li>
+        <li><a href="https://github.com/965311532/pokemon-tcg-data-importer" target="_blank">pokemon-tcg-data-importer,
+                2024</a>, a simple AWS lambda function to retrieve data from different Pokemon TCG platforms and
+            aggregate it into a Google Sheet</li>
+        <li>
+            <a href="http://www.gabrielearmento.com" target="_blank">My old personal website, 2022</a>
+        </li>
+        <li>
+            <a href="example.com" target="_blank">A demo of a website where you could talk to my virtual clone, 2024</a>
+            (I took down the site due to upkeep costs)
+        </li>
+        <li>
+            <a href="https://www.tapthetrout.com?ref=personal" target="_blank">A website where you can click a fish,
+                2022</a>
+        </li>
+    </ul>
+    <h3 id="what-i-think-i-can-do">What I think I can do</h3>
+    <p>
+        Here are a few things I think I can do:
+    </p>
+    <ul>
+        <li>Although this is something I don't (yet?) do professionally, I am very good at gathering information to
+            judge strategic decisions. Apparently, I am the metaphorical "wall" that my friends try to throw balls at to
+            see if they stick. Given my passion for data and my interest in developing companies and automations, I can
+            see where this ability of mine might stem from.</li>
+        <li>
+            I'm very good at adapting fast to technologies, frameworks, people and situations
+        </li>
+        <li>
+            I have a good understanding of the web and I think I am good at developing web applications fast. I fell in
+            love with the simplicity of serverless and I became knowledgeable in cloud services and architectures. I'm
+            also capable of developing good ETL systems.
+        </li>
+        <li>
+            I have a basic knowledge of data science, enough that I can make basic observation about data and I can
+            develop simple visualizations. I am a very frequent user of Excel and Google Sheets to analyze data.
+        </li>
+        <li>
+            I know Python, Git, SQL (basics), JavaScript, React, Next, many AWS services, Docker, Flask, Pandas, and
+            many tools like Vercel, Jira, Postman, and many others. I am proficient at making a multithreaded web
+            scraper in Python or helping with designing a Zapier integration.
+        </li>
+    </ul>
+
+    <h3 id="contact">Contact me</h3>
+    <p>
+        You can contact me at <a href="mailto:gabrielearmento@gmail.com">gabriele.armento@gmail.com</a> or through my <a href="https://www.linkedin.com/in/gabrielearmento/">LinkedIn</a> (mails are preferred).
+    </p>
+
+    <h3 id="blog">Blog & Newsletter</h3>
+    <p>
+        I don't have a blog yet, but I'm planning to start one soon. Add your email <a href="https://gabrielearmento.substack.com" target="_blank">here</a> (my newsletter) if you'd like to remain updated.
+    </p>
+
+    <h3 id="why-is-this-website-so-simple">Why is this website so simple?</h3>
+    <p>
+        This website is heavily inspired by <a href="https://motherfuckingwebsite.com/">motherf******website</a> and <a
+            href="http://bettermotherfuckingwebsite.com/">bettermotherf******website</a>. I might add things in the
+        future, but I'd like to keep everything in one page, as an experiment (except static assets of course).
+    </p>    
+</body>
+
 </html>
