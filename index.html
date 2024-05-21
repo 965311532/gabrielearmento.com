@@ -24,23 +24,40 @@
     <meta property="twitter:description" content="Hi! My name is Gabriele and I am a passionate builder who is always looking for new challenges and opportunities to learn and grow. Get to know me!">
     <meta property="twitter:image" content="https://gabrielearmento.com/preview.png">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+
     <!-- CSS -->
     <style type="text/css">
         body {
+            font-family: "Inter", sans-serif;
             background: #161616;
             margin: 40px auto;
             padding: 0px 20px;
             max-width: 650px;
             line-height: 1.6;
-            font-size: 18px;
+            font-size: 16px;
             color: #E0E0E0;
         }
 
         h1,
         h2,
-        h3 {
+        h2 {
+            font-family: "Times New Roman", serif;
+            font-weight: 600;
             line-height: 1.2;
-            margin-top: 2em;
+            margin-top: 1.5em;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 2em;
         }
 
         a {
@@ -56,8 +73,16 @@
         }
 
         ul li {
-            padding-bottom: 0.25em
+            padding-bottom: 0.5em
         }
+
+        footer {
+            font-size: 0.8em;
+            margin-top: 3em;
+            color: #999;
+        }
+
+        
     </style>
 
     <!-- Plausible -->
@@ -66,11 +91,10 @@
 
 <body>
     <header>
-        <aside><em>(last update: 2024-5-20 20:39)</em></aside>
-        <h1>
-            Gabriele Armento
-        </h1>
-        <aside>Full stack dev, cloud architect, ml student - based in Italy</aside>
+            <h1>
+                Gabriele Armento
+            </h1>
+        <aside>Full stack dev, cloud architect, ml student — based in Italy</aside>
     </header>
     <h2>Welcome to my website</h2>
     <p>
@@ -99,15 +123,15 @@
             <a href="#why-is-this-website-so-simple">Why is this website so simple?</a>
         </li>
     </ul>
-    <h3 id="about">About me</h3>
+    <h2 id="about">About me</h2>
     <p>
         I'm a full stack developer (mostly web dev and etl systems), cloud architect and machine learning student. I
         currently work as a freelance developer and I mainly consult a few companies in Italy (right now I'm working
         closely with the <a href="https://www.ego.energy/" target="_blank">EGO</a> team).
 
     </p>
-        
-    <h3 id="projects">Projects</h3>
+
+    <h2 id="projects">Projects</h2>
     <p>
         Here are a few projects I've worked on:
     </p>
@@ -117,7 +141,8 @@
                 2024</a>, a simple AWS lambda function to retrieve data from different Pokemon TCG platforms and
             aggregate it into a Google Sheet</li>
         <li>
-            <a href="http://personal-website-mbse-git-old-site-965311532s-projects.vercel.app" target="_blank">My old personal website, 2022</a>
+            <a href="http://personal-website-mbse-git-old-site-965311532s-projects.vercel.app" target="_blank">My old
+                personal website, 2022</a>
         </li>
         <li>
             <a href="example.com" target="_blank">A demo of a website where you could talk to my virtual clone, 2024</a>
@@ -128,7 +153,7 @@
                 2022</a>
         </li>
     </ul>
-    <h3 id="what-i-think-i-can-do">What I think I can do</h3>
+    <h2 id="what-i-think-i-can-do">What I think I can do</h2>
     <p>
         Here are a few things I think I can do:
     </p>
@@ -156,22 +181,32 @@
         </li>
     </ul>
 
-    <h3 id="contact">Contact me</h3>
+    <h2 id="contact">Contact me</h2>
     <p>
-        You can contact me at <a href="mailto:gabriele.armento@gmail.com">gabriele.armento@gmail.com</a> or through my <a href="https://www.linkedin.com/in/gabrielearmento/" target="_blank">LinkedIn</a> (mails are preferred).
+        You can contact me at <a href="mailto:gabriele.armento@gmail.com">gabriele.armento@gmail.com</a> or through my
+        <a href="https://www.linkedin.com/in/gabrielearmento/" target="_blank">LinkedIn</a> (mails are preferred).
     </p>
 
-    <h3 id="blog">Blog & Newsletter</h3>
+    <h2 id="blog">Blog & Newsletter</h2>
     <p>
-        I don't have a blog yet, but I'm planning to start one soon. Add your email <a href="https://gabrielearmento.substack.com" target="_blank">here</a> (my newsletter) if you'd like to remain updated.
+        I don't have a blog yet, but I'm planning to start one soon. Add your email <a
+            href="https://gabrielearmento.substack.com" target="_blank">here</a> (my newsletter) if you'd like to remain
+        updated.
     </p>
 
-    <h3 id="why-is-this-website-so-simple">Why is this website so simple?</h3>
+    <h2 id="why-is-this-website-so-simple">Why is this website so simple?</h2>
     <p>
-        This website is heavily inspired by <a href="https://motherfuckingwebsite.com/" target="_blank">motherf******website</a> and <a
-            href="http://bettermotherfuckingwebsite.com/" target="_blank">bettermotherf******website</a>. I might add things in the
+        This website is heavily inspired by <a href="https://motherfuckingwebsite.com/"
+            target="_blank">motherf******website</a> and <a href="http://bettermotherfuckingwebsite.com/"
+            target="_blank">bettermotherf******website</a>. I might add things in the
         future, but I'd like to keep everything in one page, as an experiment (except static assets of course).
-    </p>    
+    </p>
+
+    <!-- Footer -->
+    <footer>
+        <hr>
+        <aside><em>(last update: 2024-5-20 20:39)</em></aside>
+    </footer>
 </body>
 
 </html>
